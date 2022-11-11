@@ -17,13 +17,6 @@ function Navbar(props) {
         window.addEventListener('scroll', changeNavbarBg);
     }, [])
 
-    // useEffect(() => {
-    //     const switchElement = document.getElementById("theme-mode")
-
-    //     switchElement.addEventListener('click', () => {
-    //         document.body.classList.toggle('light')
-    //     })
-    // }, [])
 
     return (
         <nav id="navBar" className={bgChange ? 'navbar navbar-default navbar-expand-lg bgChange' : 'navbar navbar-default navbar-expand-lg'}>

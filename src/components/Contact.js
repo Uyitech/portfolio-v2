@@ -1,4 +1,5 @@
 import React from 'react'
+import { $, jQuery } from "jquery"
 import { contact } from '../data';
 
 function Contact() {
@@ -9,6 +10,57 @@ function Contact() {
         background: "none !important",
         overflow: "hidden",
     }
+
+    const sendContact = () => {
+        var valid;
+        valid = validateContact();
+        if (valid) {
+            jQuery.ajax({
+                url: "../../contact.php",
+                data: 'name=' + $("#name").val() + '&email=' +
+                    $("#email").val() + '&subject=' +
+                    $("#subject").val() + '&message=' +
+                    $("message").val(),
+                type: "POST",
+                success: function (data) {
+                    $("#mail-status").show(1000, function () {
+                        $("#mail-status").fadeOut(3000);
+                    }
+                    );
+                    document.getElementById("contact-form").reset();
+                    return false;
+                },
+                error: function () { }
+            });
+        }
+    }
+
+    function validateContact() {
+        var valid = true;
+        if (!$("#name").val()) {
+            $("#name").css('background-color', 'var(--contact-input)');
+            valid = false;
+        }
+        if (!$("#email").val()) {
+            $("#email").css('background-color', 'var(--contact-input)');
+            valid = false;
+        }
+        // eslint-disable-next-line
+        if (!$("#email").val().match(/^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/)) {
+            $("#email").css('background-color', 'var(--contact-input)');
+            valid = false;
+        }
+        if (!$("#subject").val()) {
+            $("#subject").css('background-color', 'var(--contact-input)');
+            valid = false;
+        }
+        if (!$("#message").val()) {
+            $("#message").css('background-color', 'var(--contact-input)');
+            valid = false;
+        }
+        return valid;
+    }
+
 
     return (
         <section id="contact" className="contact">
@@ -49,7 +101,7 @@ function Contact() {
                     {/* <!--=======Text Field=======--> */}
                     <div className="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch" data-aos="fade-up">
                         <form action="" target="_self" method="post" className="contact-form" id="contact-form"
-                            onSubmit="return false" onClick="sendContact();" name="contact-form">
+                            onSubmit={() => { return false }} onClick={sendContact} name="contact-form">
                             <div className="row">
                                 <div className="form-group col-md-6">
                                     <label htmlFor="name">Your Name</label>
@@ -80,7 +132,7 @@ function Contact() {
                     </div>
                 </div>
             </div>
-        </section>
+        </section >
     )
 }
 
