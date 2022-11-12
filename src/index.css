@@ -3,6 +3,13 @@
 /*--------------------------------------------------------------
 # The Start
 --------------------------------------------------------------*/
+@font-face {
+    font-family: 'unicons';
+    src: url('/public/unicons.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -124,20 +131,21 @@ a {
 
 /* Track */
 ::-webkit-scrollbar-track {
-    background: var(--scrollbar-track);
+    background-color: var(--scrollbar-track);
     border-radius: 5px;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: var(--scrollbar-thumb);
+    background-color: var(--scrollbar-thumb);
     border-radius: 5px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-    background: var(--scrollbar-thumb);
+    background-color: var(--scrollbar-thumb);
 }
+
 
 /*--------------------------------------------------------------
 # Navbar
@@ -1514,7 +1522,8 @@ section div .text-tit {
 
 .progress-wrap::after {
     position: absolute;
-    content: "^";
+    font-family: 'unicons';
+    content: '\e84b';
     text-align: center;
     line-height: 50px;
     font-size: 25px;
@@ -1536,7 +1545,8 @@ section div .text-tit {
 
 .progress-wrap::before {
     position: absolute;
-    content: "^";
+    font-family: 'unicons';
+    content: '\e84b';
     text-align: center;
     line-height: 50px;
     font-size: 25px;

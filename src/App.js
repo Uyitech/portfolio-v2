@@ -48,7 +48,7 @@ function App() {
 
 
     return (
-        <div className={theme ? "light" : ""} >
+        <div className={theme ? "light" : "dark"} >
             {
                 loading ?
                     <ClimbingBoxLoader
@@ -61,7 +61,7 @@ function App() {
                     <>
                         <Navbar
                             toggle={() => setTheme(!theme)}
-                            checked={theme ? "true" : ""}
+                            checked={theme ? "{true}" : ""}
                         />
                         <Home />
                         <About />
@@ -73,8 +73,6 @@ function App() {
                         <BTT />
                     </>
             }
-
-
         </div >
     );
 }

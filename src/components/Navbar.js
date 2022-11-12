@@ -28,8 +28,7 @@ function Navbar(props) {
                     <label className="form-check-label" htmlFor="theme-mode"><i className="bi bi-sun"></i></label>
                 </div>
                 <button className="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarDefault" aria-controls="navbarDefault" aria-expanded="false"
-                    aria-label="Toggle navigation">
+                    data-bs-target="#navbarDefault" aria-controls="navbarDefault" aria-expanded="false">
                     <span></span>
                     <span></span>
                     <span></span>
