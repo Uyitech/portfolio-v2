@@ -27,12 +27,12 @@ export const home = [
 ]
 
 export const skill = [
-    "CSS",
     "HTML",
-    "React",
     "Tailwind",
-    "Mongo DB",
+    "CSS",
     "Bootstrap",
+    "React",
+    "Mongo DB",
     "Javascript",
     "Figma & Adobe",
 ]
