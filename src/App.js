@@ -1,4 +1,6 @@
 import { useEffect, useState } from 'react'
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
 import About from './components/About';
@@ -48,7 +50,7 @@ function App() {
 
 
     return (
-        <div className={theme ? "light" : "dark"} >
+        <div className={theme ? "light" : ""} >
             {
                 loading ?
                     <ClimbingBoxLoader
@@ -71,6 +73,18 @@ function App() {
                         <Contact />
                         <Footer />
                         <BTT />
+                        <ToastContainer
+                            position="top-right"
+                            autoClose={5000}
+                            hideProgressBar={false}
+                            newestOnTop={false}
+                            closeOnClick
+                            rtl={false}
+                            pauseOnFocusLoss
+                            draggable
+                            pauseOnHover
+                            theme={theme ? "light" : "dark"}
+                        />
                     </>
             }
         </div >
